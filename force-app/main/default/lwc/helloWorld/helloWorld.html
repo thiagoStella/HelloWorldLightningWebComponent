@@ -1,8 +1,13 @@
 <template>
     <lightning-card title="HelloWorld" icon-name="custom:custom14">
         <div class="slds-m-around_medium">
-            <p>Hello, {variavel}!</p>
-            <lightning-input label="Name" value={variavel} onchange={changeHandler}></lightning-input>
+            <p>Hello, {clickedButtonMostrarNome}!</p>
+            <lightning-input label="Name" value={variavel} onchange={changeHandler}></lightning-input>    
+            
+            <lightning-button variant="success" label="Mostrar" title="Successful action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+            <lightning-button variant="destructive" label="Esconder" title="Destructive action" onclick={handleClick2} class="slds-m-left_x-small"></lightning-button>
+
         </div>
     </lightning-card>
 </template>
