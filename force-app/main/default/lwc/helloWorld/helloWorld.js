@@ -1,18 +1,31 @@
 import { LightningElement } from 'lwc';
 
 export default class HelloWorld extends LightningElement {
-    variavel = 'World';
+    nome = '';
+    idade = '';
+    estudante = false;
     clickedButtonMostrarNome;
 
     changeHandler(event) {
-    this.variavel = event.target.value;
+    this.nome = event.target.value;
     }
 
-    handleClick(event) {
-        this.clickedButtonMostrarNome = this.variavel;
+    changeHandlerIdade(event) {
+        this.idade = event.target.value;
+    }
+
+    changeHandlerEstudante(event) {
+        this.estudante = event.target.checked;
+    }
+
+    handleClickSalvar(event) {
+        this.clickedButtonMostrarNome = this.nome;
     }
     
-    handleClick2(event) {
+    handleClickLimpaCampo(event) {
+        this.nome = '';
+        this.idade = '';
+        this.estudante = false;
         this.clickedButtonMostrarNome = '';
     }
 }
